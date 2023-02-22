@@ -1,0 +1,29 @@
+.nav{
+    display: flex;
+    overflow-x: scroll;
+    gap: .5rem;
+}
+
+.nav::-webkit-scrollbar {
+    width: 0.1rem;
+    background-color: rgba(255, 255, 255, 0);  
+}
+
+.nav::-webkit-scrollbar-thumb {
+    background:#fd5e5e;
+    border-radius: 7px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+    
+}
+
+.btn_pagination{
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn_pagination:focus{
+    background-color: #DD1A1A;
+    color: white;
+}

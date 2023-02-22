@@ -1,0 +1,56 @@
+.home_app{
+    background-image: url(https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/13/a9a51bc0b8d626db493ab5f9a971b043/background-hero.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.home_info{
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+.img_pokedex{
+    max-width: 500px;
+    margin-bottom: 50px;
+}
+
+.first_tittle{
+    color: #FE1936;
+    font-size: 40px;
+}
+
+.second_tittle{
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.form_home{
+    display: flex;
+    margin-top:30px;
+}
+
+.input_home{
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 1px 1px 5px rgba(114, 114, 114, 0.836);
+    border-radius: 5px 0 0 5px;
+}
+
+
+.btn_home{
+    width: 250px;
+    background-color: #D93F3F;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 1px 1px 5px rgba(114, 114, 114, 0.836);
+    border-radius: 0 5px 5px 0;
+}

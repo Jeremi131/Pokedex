@@ -1,0 +1,242 @@
+.info_pokemon{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    padding: 5rem 3rem;
+        background-image: url(https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+    
+}
+
+
+.box_back{
+    position: fixed;
+    top: 30px;
+    left: 50px;
+    font-size: 70px;
+    color: #DD1A1A;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.box_back:hover{
+    color: #af1212;
+}
+
+.card_info{
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.header_info{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.sprite_pokemon{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-bottom: 30px;
+}
+
+.number_pokemon{
+    display: flex;
+    align-self: center;
+    border: solid 1px #D3D3D3;
+    width: fit-content;
+    padding: .3rem;
+}
+
+.container_name{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+}
+
+.name_pokemon{
+    text-transform: capitalize;;
+}
+
+hr{
+    height: 1px;
+}
+
+.height_weight_container{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.weight_height{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_type_habilities{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.box_tittle{
+    text-align: center ;
+    margin-bottom: 20px;
+}
+
+.type_pokemon{
+    display: flex;
+    gap: 1rem;
+}
+
+.type{
+    padding: .8rem;
+    width: 100px;
+    height: fit-content;
+    text-align: center;  
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.ability_pokemon{
+    display: flex;
+    gap: 1rem;
+}
+
+.ability{
+    padding: .7rem;
+    max-width: 100%;
+    height: fit-content;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.container_tittle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info_stats{
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.text_stats{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.bar_stats{
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+}
+
+.move_info{
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 1px 1px 5px black;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.move_tittle{
+    font-size: 24px ;
+}
+
+.moveSet{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 30px;
+}
+
+.movement{
+    text-transform: capitalize;
+    background-color: #E5E5E5;
+    border-radius: 25px;
+    padding: .7rem;
+    transition: transform .2s ease;
+}
+
+.movement:hover{
+    transform: scale(1.1);
+}
+
+@media(max-width: 600px) {
+    .info_type_habilities{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .type{
+        width: 80px;
+        font-size: 12px;
+    }
+
+    .ability{
+        width: 80px;
+        font-size: 10px;
+    }
+
+    .text_stats{
+    font-size: 12px;
+}
+    
+}
+
+
+
+
+

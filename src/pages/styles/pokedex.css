@@ -1,0 +1,141 @@
+.pokedex_body{
+    background-image: url(https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    position: relative;
+}
+
+.red_chart {
+    width: 100%;
+    height: 40px;
+    background-color: #f83e3e;
+}
+
+.black_chart {
+    width: 100%;
+    height: 25px;
+    background-color: #1b1b1b;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.664);
+}
+
+.pokedex_tittle {
+    width: 100%;
+    max-width: 280px;
+    position: absolute;
+    top: 10px;
+    margin-left: 70px;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(26, 26, 26);
+    position: absolute;
+    right: 0;
+    margin-right: 70px;
+    top: 0;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.664);
+
+}
+
+.circle_two {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_three {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_four {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #c7c7c7;
+}
+
+.poke_card {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 1rem auto 0 auto;
+    padding: 2rem 3rem;
+}
+
+.pokedex_app {
+    padding: 2rem;
+}
+
+.text_welcome {
+    font-size: 30px;
+    margin-bottom: 40px;
+    padding: 0 3rem;
+    color: #f7f6f6;
+}
+
+.form_pokedex {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.input_pokedex {
+    padding: 1rem;
+    width: 25vw;
+    height: 8vh;
+    box-shadow: 1px 1px 5px rgba(114, 114, 114, 0.836);
+    border-radius: 5px 0 0 5px;
+    font-family: inherit;
+}
+
+.input_pokedex:focus{
+    border: solid 1px #D93F3F;
+}
+
+.btn_pokedex {
+    background-color: #D93F3F;
+    color: white;
+    width: 10vw;
+    height: 8vh;
+    border: none;
+    font-weight: 700;
+    box-shadow: 1px 1px 5px rgba(114, 114, 114, 0.836);
+    border-radius: 0 5px 5px 0;
+    font-family: inherit;
+}
+
+
+
+.pagination{
+    padding: 4rem 25.1rem;
+}
+
+@media(max-width: 768px) {
+    .pagination{
+        padding: 4rem 2rem;
+    }
+    
+}

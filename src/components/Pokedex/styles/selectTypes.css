@@ -1,0 +1,13 @@
+.select_pokemon{
+    width: 30vw;
+    height: 8vh;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(114, 114, 114, 0.836);
+    border-radius: 5px;
+    font-family: inherit;
+    padding: 1rem;
+}
+
+.option_type{
+    font-size: 15px;
+}
