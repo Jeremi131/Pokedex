@@ -40,18 +40,19 @@
 
 .first_tittle {
     color: #FE1936;
-    font-size: 40px;
+    font-size: 45px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(29, 29, 29);
 }
 
 .second_tittle {
+    font-family: 'Silkscreen', cursive;
     color: #ffffff;
-    font-size: 25px;
+    font-size: 30px;
     display: block;
     white-space: nowrap;
     border-right: 2px solid;
-    width: 23ch;
+    width: 25ch;
     animation: typing 5s steps(27), blink .5s infinite step-end alternate;
     overflow: hidden;
 }
@@ -91,4 +92,15 @@
     font-size: 16px;
     box-shadow: 1px 1px 5px rgba(114, 114, 114, 0.836);
     border-radius: 0 5px 5px 0;
+}
+
+@media (max-width: 600px) {
+    .first_tittle {
+        font-size: 35px;
+    }
+
+    .second_tittle {
+        font-size: 17px;
+    }
+
 }

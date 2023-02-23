@@ -190,6 +190,7 @@ hr {
     padding: 2rem;
     border-radius: 10px;
     background-color: white;
+    margin-bottom: 2rem;
 }
 
 .move_tittle {
@@ -255,8 +256,8 @@ hr {
     position: absolute;
     margin-bottom: -300px;
     color: #e62121;
-
 }
+
 
 @media(max-width: 600px) {
     .box_back{

@@ -16,7 +16,9 @@
 }
 
 .text_loading{
+    font-family: 'Silkscreen', cursive;
     margin-top: 170px;
+    font-size: 45px;
     display: block;
     white-space: nowrap;
     border-right: 2px solid;
@@ -47,4 +49,9 @@
     .img_loading{
         width: 60%;
     }
+
+    .text_loading{
+        font-size: 30px;
+    }
+
 }
