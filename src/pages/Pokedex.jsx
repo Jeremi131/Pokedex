@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import SelectTypes from '../components/Pokedex/SelectTypes'
 import pokedexTittle from '../../public/images/pokedex.png'
 import Pagination from '../components/Pagination'
+import LoadingPokedex from '../components/LoadingPokedex'
 
 const Pokedex = () => {
 
@@ -16,6 +17,8 @@ const Pokedex = () => {
     const [selectValue, setSelectValue] = useState('allpokemon')
     const [currentPage, setCurrentPage] = useState(1)
     const [pokemonPerPage, setPokemonPerPage] = useState(15)
+    const [isLoading, setIsLoading] = useState(true)
+
 
     const navigate = useNavigate()
 
@@ -25,6 +28,9 @@ const Pokedex = () => {
             axios.get(url)
                 .then(res => setPokemons(res.data))
                 .catch(err => console.log(err))
+                .finally(() => {
+                    setTimeout(() => setIsLoading(false), 5000)
+                 })
         } else {
             axios.get(selectValue)
                 .then(res => {
@@ -54,6 +60,9 @@ const Pokedex = () => {
     }
 
     return (
+        isLoading ?
+        <LoadingPokedex />
+        :
         <div className='pokedex_body'>
             <header className='header'>
                 <div className='red_chart'></div>
@@ -71,12 +80,21 @@ const Pokedex = () => {
                 <h1 className='text_welcome'><span className='name_trainer' style={{ color: '#ff3741' }}>Welcome {nameTrainer},</span> here find your favorite Pokémon</h1>
                 <form onSubmit={handleSubmit} className='form_pokedex'>
                     <div className='search_pokemon'>
-                        <input className='input_pokedex' id='pokemon' type="text" />
+                        <input className='input_pokedex' id='pokemon' type="text" placeholder='Search for a Pokemon Ex: Pikachu' />
                         <button className='btn_pokedex'>Search</button>
                     </div>
                     <SelectTypes setSelectValue={setSelectValue}
                     />
                 </form>
+
+                <div className='pagination'>
+            <Pagination
+                    pokemonPerPage={pokemonPerPage}
+                    totalPokemon={pokemons?.results.length}
+                    paginate={paginate}
+                    currentPage={currentPage}
+                />
+                </div>
 
                 <div className='poke_card'>
                     {currentPokemon?.map((pokemon) => (

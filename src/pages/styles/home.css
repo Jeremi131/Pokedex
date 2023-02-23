@@ -1,4 +1,4 @@
-.home_app{
+.home_app {
     background-image: url(https://media-s3-us-east-1.ceros.com/hype-beast/images/2018/07/13/a9a51bc0b8d626db493ab5f9a971b043/background-hero.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,7 +7,7 @@
 }
 
 
-.home_info{
+.home_info {
     width: 100%;
     height: 100vh;
     flex-direction: column;
@@ -17,27 +17,65 @@
     padding: 3rem;
 }
 
-.img_pokedex{
+.img_pokedex {
     max-width: 500px;
     margin-bottom: 50px;
+    animation: logoAnimation 2s infinite;
 }
 
-.first_tittle{
+@keyframes logoAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.first_tittle {
     color: #FE1936;
     font-size: 40px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(29, 29, 29);
 }
 
-.second_tittle{
+.second_tittle {
     color: #ffffff;
     font-size: 25px;
+    display: block;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 23ch;
+    animation: typing 5s steps(27), blink .5s infinite step-end alternate;
+    overflow: hidden;
 }
 
-.form_home{
+@keyframes typing {
+
+    from {
+        width: 0
+    }
+}
+
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.form_home {
     display: flex;
-    margin-top:30px;
+    margin-top: 30px;
 }
 
-.input_home{
+.input_home {
     padding: 1rem;
     width: 100%;
     box-shadow: 1px 1px 5px rgba(114, 114, 114, 0.836);
@@ -45,7 +83,7 @@
 }
 
 
-.btn_home{
+.btn_home {
     width: 250px;
     background-color: #D93F3F;
     color: white;

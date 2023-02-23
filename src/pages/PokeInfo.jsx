@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import './styles/pokeInfo.css'
 import pokedexTittle from '../../public/images/pokedex.png'
+import LoadingPokedex from '../components/LoadingPokedex'
+import pokeballError from '../../public/images/pokeballError.png'
 
 
 const PokeInfo = () => {
@@ -13,7 +15,8 @@ const PokeInfo = () => {
 
     const [poke, setPoke] = useState()
     const [hasError, setHasError] = useState(false)
-    console.log(poke)
+    const [isLoading, setIsLoading] = useState(true)
+
 
     const colorType = {
         grass: "#4fe63e",
@@ -70,6 +73,9 @@ const PokeInfo = () => {
                 setHasError(true)
                 console.log(err)
             })
+            .finally(() => {
+                setTimeout(() => setIsLoading(false), 2000)
+            })
     }, [id])
 
 
@@ -79,102 +85,125 @@ const PokeInfo = () => {
 
 
     if (hasError) {
-        return <h1>The Pokemon with name "{id}" not found</h1>
+        return <div className='hasError'>
+                                    <i onClick={handleClick} className='bx box_back bxs-left-arrow-circle bx-tada'></i>
+            <div className='error'>
+                <h1 className='text_error'>4</h1>
+                <img className='pokeballError' src={pokeballError} alt="" />
+                <h1 className='text_error'>4</h1>
+            </div>
+            <h1 className='text_one'>¡Oh-Oh!</h1>
+            <h1 className='text_two'>The Pokemon with name "{id}" not found</h1>
+        </div>
     } else {
         return (
-            <div className='info_pokemon'>
-                <div>
-                    <div className='prueba'></div>
-                </div>
-                <i onClick={handleClick} className='bx box_back bxs-left-arrow-circle bx-tada'></i>
-                <div className='card_info'>
-                    <header className={`header_info bg-${poke?.types[0].type.name}`}>
-                        <img className='sprite_pokemon' src={poke?.sprites.other['official-artwork'].front_default} alt="" />
+            isLoading ?
+                <LoadingPokedex />
+                :
+                <div className='info_container'>
+                    <header className='header'>
+                        <div className='red_chart'></div>
+                        <img className='pokedex_tittle' src={pokedexTittle} alt="" />
+                        <div className='circle'>
+                            <div className='circle_two'>
+                                <div className='circle_three'>
+                                    <div className='circle_four'></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='black_chart'></div>
                     </header>
+                    <div className='info_pokemon'>
+                        <i onClick={handleClick} className='bx box_back bxs-left-arrow-circle bx-tada'></i>
+                        <div className='card_info'>
+                            <header className={`header_info bg-${poke?.types[0].type.name}`}>
+                                <img className='sprite_pokemon' src={poke?.sprites.other['official-artwork'].front_default} alt="" />
+                            </header>
 
-                    <h1 className='number_pokemon' style={{ color: `${colorText[pokeText]}` }}>#{poke?.id}</h1>
-                    <div className='container_name'>
-                        <hr />
-                        <h1 className='name_pokemon' style={{ color: `${colorText[pokeText]}` }}>{poke?.name}</h1>
-                        <hr />
-                    </div>
-                    <div className='height_weight_container'>
-                        <p className='weight_height'><span>Weight</span>{poke?.weight}</p>
-                        <p className='weight_height'><span>height</span>{poke?.height}</p>
-                    </div>
-                    <div className='info_type_habilities'>
-
-                        <div className='type_container'>
-                            <div className='box_tittle'>
-                                <p>Type</p>
+                            <h1 className='number_pokemon' style={{ color: `${colorText[pokeText]}` }}>{poke?.id}</h1>
+                            <div className='container_name'>
+                                <hr />
+                                <h1 className='name_pokemon' style={{ color: `${colorText[pokeText]}` }}>{poke?.name}</h1>
+                                <hr />
                             </div>
-                            <ul className='type_pokemon'>
-                                {
-                                    poke?.types.map(type => (
-                                        <li className='type' style={{ backgroundColor: `${colorType[pokeType]}` }} key={type.type.name}>{type.type.name}</li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-
-
-                        <div className='ability_container'>
-                            <div className='box_tittle'>
-                                <p>Ability</p>
+                            <div className='height_weight_container'>
+                                <p className='weight_height'><span>Weight</span>{poke?.weight}</p>
+                                <p className='weight_height'><span>height</span>{poke?.height}</p>
                             </div>
-                            <ul className='ability_pokemon'>
-                                {
-                                    poke?.abilities.map(ability => (
-                                        <li className='ability' key={ability.ability.name}>{ability.ability.name}</li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
+                            <div className='info_type_habilities'>
 
-
-                    </div>
-                    <ul className='info_stats' >
-                        <div className='container_tittle'>
-                            <h2 className='tittle_stats'>Stats</h2>
-                            <hr />
-                        </div>
-
-                        {
-                            poke?.stats.map(stat => (
-                                <li className='stats_container' key={stat.stat.url}>
-                                    <div className='text_stats'>
-                                        <span >{stat.stat.name}</span>
-                                        <span >{stat.base_stat}</span>
+                                <div className='type_container'>
+                                    <div className='box_tittle'>
+                                        <p>Type</p>
                                     </div>
-                                    <div
-                                        style={{
-                                            background: `linear-gradient(90deg, #c9ff5a 0, #a4ff2a ${stat.base_stat}%, rgb(231, 231, 231) ${stat.base_stat}% 100%)`,
-                                        }}
-                                        className="bar_stats"
-                                    ></div>
+                                    <ul className='type_pokemon'>
+                                        {
+                                            poke?.types.map(type => (
+                                                <li className='type' style={{ backgroundColor: `${colorType[pokeType]}` }} key={type.type.name}>{type.type.name}</li>
+                                            ))
+                                        }
+                                    </ul>
+                                </div>
 
-                                </li>
-                            ))
-                        }
-                    </ul>
 
-                </div>
+                                <div className='ability_container'>
+                                    <div className='box_tittle'>
+                                        <p>Ability</p>
+                                    </div>
+                                    <ul className='ability_pokemon'>
+                                        {
+                                            poke?.abilities.map(ability => (
+                                                <li className='ability' key={ability.ability.name}>{ability.ability.name}</li>
+                                            ))
+                                        }
+                                    </ul>
+                                </div>
 
-                <div className='move_info'>
-                    <div className='container_tittle'>
-                        <h1 className='move_tittle'>Movements</h1>
-                        <hr />
+
+                            </div>
+                            <ul className='info_stats' >
+                                <div className='container_tittle'>
+                                    <h2 className='tittle_stats'>Stats</h2>
+                                    <hr />
+                                </div>
+
+                                {
+                                    poke?.stats.map(stat => (
+                                        <li className='stats_container' key={stat.stat.url}>
+                                            <div className='text_stats'>
+                                                <span >{stat.stat.name}</span>
+                                                <span >{stat.base_stat}</span>
+                                            </div>
+                                            <div
+                                                style={{
+                                                    background: `linear-gradient(90deg, #c9ff5a 0, #a4ff2a ${stat.base_stat}%, rgb(231, 231, 231) ${stat.base_stat}% 100%)`,
+                                                }}
+                                                className="bar_stats"
+                                            ></div>
+
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+
+                        </div>
+
+                        <div className='move_info'>
+                            <div className='container_tittle'>
+                                <h1 className='move_tittle'>Movements</h1>
+                                <hr />
+                            </div>
+                            <ul className='moveSet'>
+                                {
+                                    poke?.moves.map(move => (
+                                        <li className='movement' key={move.move.name}>{move.move.name}</li>
+                                    ))
+                                }
+                            </ul>
+                        </div>
+
                     </div>
-                    <ul className='moveSet'>
-                        {
-                            poke?.moves.map(move => (
-                                <li className='movement' key={move.move.name}>{move.move.name}</li>
-                            ))
-                        }
-                    </ul>
                 </div>
-
-            </div>
 
         )
     }

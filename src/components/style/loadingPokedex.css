@@ -1,0 +1,39 @@
+.loadingScreen_Two{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url(https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.loading_pokeball{
+    width: 10%;
+    animation: loadingAnimation 2s infinite;
+}
+
+@keyframes loadingAnimation{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading_text_pokedex{
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(29, 29, 29);
+}
+
+@media (max-width: 600px) {
+    .loading_pokeball{
+        width: 30%;
+    }
+}

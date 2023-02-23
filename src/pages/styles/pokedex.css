@@ -81,8 +81,8 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1400px;
-    margin: 1rem auto 0 auto;
-    padding: 2rem 3rem;
+    margin:  auto 0 auto;
+    padding: 0rem 3rem;
 }
 
 .pokedex_app {
@@ -91,9 +91,12 @@
 
 .text_welcome {
     font-size: 30px;
+    margin-top: 40px;
     margin-bottom: 40px;
     padding: 0 3rem;
     color: #f7f6f6;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(29, 29, 29);
 }
 
 .form_pokedex {
@@ -133,9 +136,34 @@
     padding: 4rem 25.1rem;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 600px) {
     .pagination{
         padding: 4rem 2rem;
     }
+
+    .pokedex_tittle {
+        max-width: 180px;
+        margin: 10px 10px;
+    }
+
+    .circle{
+        margin: 20px ;
+    }
+    
+    .text_welcome{
+        font-size: 25px;
+    }
+
+    .form_pokedex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn_pokedex{
+        font-size: 10px;
+    }
+
     
 }
+   

@@ -1,0 +1,50 @@
+.loading_screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url(https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.img_loading{
+    width: 30%;
+}
+
+.text_loading{
+    margin-top: 170px;
+    display: block;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 9ch;
+    color: #FE1936;
+    animation: typing 2s steps(10), blink .5s infinite step-end alternate;
+    overflow: hidden;
+    position: absolute;
+    -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: rgb(29, 29, 29);
+}
+
+@keyframes typing {
+
+    from {
+        width: 0
+    }
+}
+
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+@media (max-width: 600px) {
+    .img_loading{
+        width: 60%;
+    }
+}

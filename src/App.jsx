@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Footer from './components/Shared/Footer'
 import Home from './pages/Home'
 import Pokedex from './pages/Pokedex'
 import PokeInfo from './pages/PokeInfo'
@@ -10,10 +11,13 @@ function App() {
 
   const { nameTrainer } = useSelector(state => state)
 
-  console.log({nameTrainer})
 
+  
+
+ 
   return (
     <div className="App">
+
       <Routes>
         <Route path='/' element={<Home/>} />
 
@@ -21,8 +25,11 @@ function App() {
           <Route path='/pokedex' element={<Pokedex/>}/>
           <Route path='/pokedex/:id' element={<PokeInfo/>}/>
         </Route>
+        
 
       </Routes>
+      <Footer/>
+
     </div>
   )
 }

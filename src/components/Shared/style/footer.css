@@ -1,0 +1,25 @@
+.footer{
+    background-color: #FE1936;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color_text{
+    color: white;
+    font-size: 12px;
+}
+    
+
+.marca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20px;
+}
