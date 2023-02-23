@@ -9,8 +9,8 @@
 }
 
 .poke_info:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+    transform: rotate(5deg);
+        cursor: pointer;
 }
 
 .header_card{

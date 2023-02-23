@@ -136,6 +136,25 @@
     padding: 4rem 25.1rem;
 }
 
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.box_icon{
+    font-size: 35px;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.box_icon:hover{
+    color: #f83e3e;
+    transform: scale(1.2);
+}
+
 @media(max-width: 600px) {
     .pagination{
         padding: 4rem 2rem;

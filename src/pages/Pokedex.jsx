@@ -110,6 +110,17 @@ const Pokedex = () => {
                     currentPage={currentPage}
                 />
                 </div>
+                <div className='social'>
+                    <a href="https://www.facebook.com/Jeremi.Castellano131" target='blank'>
+                        <i className='bx box_icon bxl-facebook'></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jeremi-castellano-5b924a1a3/" target='blank'>
+                        <i className='bx box_icon bxl-linkedin'></i>
+                    </a>
+                    <a href="https://www.instagram.com/jeremi_castellano/" target='blank'>
+                        <i className='bx box_icon bxl-instagram'></i>
+                    </a>
+                </div>
         </div>
     )
 }
