@@ -2,6 +2,7 @@ import axios from 'axios'
 import '../Pokedex/styles/pokeCard.css'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import pokeball from '../../../public/images/pokeball.png'
 
 const PokeCard = ({ pokemonUrl }) => {
 
@@ -80,6 +81,7 @@ const PokeCard = ({ pokemonUrl }) => {
             </ul>
             <span className='type_text'>Type</span>
             <hr />
+            <img className='pokeball' src={pokeball} alt="" />
             <ul className='poke_stats'>
                 {
                     poke?.stats.map(stat => (

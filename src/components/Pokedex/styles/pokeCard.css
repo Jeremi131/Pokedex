@@ -5,7 +5,8 @@
     border: solid 10px;
     overflow: hidden;
     background-color: white;
-    transition: transform .2s
+    transition: transform .2s;
+    position: relative;
 }
 
 .poke_info:hover{
@@ -54,6 +55,15 @@ hr{
     width: 95%;
     height: 2px;
     margin: 0 auto;
+}
+
+.pokeball{
+    position: absolute;
+    max-width: 200px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 20%;
 }
 
 .poke_stats{
