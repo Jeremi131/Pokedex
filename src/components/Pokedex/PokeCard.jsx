@@ -9,6 +9,8 @@ const PokeCard = ({ pokemonUrl }) => {
     const [poke, setPoke] = useState()
     const navigate = useNavigate()
 
+    console.log(poke)
+
     useEffect(() => {
         axios.get(pokemonUrl)
             .then(res => setPoke(res.data))

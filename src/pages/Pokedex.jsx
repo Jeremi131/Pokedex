@@ -76,16 +76,17 @@ const Pokedex = () => {
                 </div>
                 <div className='black_chart'></div>
             </header>
+             <h1 className='text_welcome'><span className='name_trainer' style={{ color: '#ff3741' }}>Welcome {nameTrainer},</span> here find your favorite Pokémon</h1>
+             <form onSubmit={handleSubmit} className='form_pokedex'>
+                 <div className='search_pokemon'>
+                     <input className='input_pokedex' id='pokemon' type="text" placeholder='Search for a Pokemon Ex: Pikachu' />
+                     <button className='btn_pokedex'>Search</button>
+                 </div>
+                 <SelectTypes setSelectValue={setSelectValue}
+                 />
+             </form>
             <div className='pokedex_app'>
-                <h1 className='text_welcome'><span className='name_trainer' style={{ color: '#ff3741' }}>Welcome {nameTrainer},</span> here find your favorite Pokémon</h1>
-                <form onSubmit={handleSubmit} className='form_pokedex'>
-                    <div className='search_pokemon'>
-                        <input className='input_pokedex' id='pokemon' type="text" placeholder='Search for a Pokemon Ex: Pikachu' />
-                        <button className='btn_pokedex'>Search</button>
-                    </div>
-                    <SelectTypes setSelectValue={setSelectValue}
-                    />
-                </form>
+               
 
                 <div className='pagination'>
             <Pagination

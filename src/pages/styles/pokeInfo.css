@@ -1,3 +1,10 @@
+.info_container{
+    background-image: url(https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
 .info_pokemon {
     display: flex;
     flex-direction: column;
@@ -7,12 +14,8 @@
     align-items: center;
     max-width: 1400px;
     padding: 5rem 3rem;
-    background-image: url(https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-
+    margin: auto;
+    
 }
 
 
